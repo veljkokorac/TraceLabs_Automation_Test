@@ -68,6 +68,19 @@ public class RegistrationPageTest extends BaseTest {
         registrationPage.clickSubmit();
         registrationPage.verifyConfirmMailMissing(TestValues.missingConfirmMailText);     
     }
+    @Test 
+    public void emailAndConfirmMailMissmatch(){
+        registrationPage = new RegistrationPage(driver);
+        registrationPage.goToRegistrationPage();
+        registrationPage.enterUsername();
+        registrationPage.enterMail();
+        registrationPage.enterDifferentMail();
+        registrationPage.enterPassword();
+        registrationPage.enterConfirmPassword();
+        registrationPage.clickCheckField();
+        registrationPage.clickSubmit();     
+        registrationPage.verifyMailMissmatch(TestValues.mailMissmatchMessage); 
+    }
 
     @Test
     public void missingPassword(){

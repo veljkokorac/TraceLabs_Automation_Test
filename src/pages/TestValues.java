@@ -46,6 +46,8 @@ public class TestValues  {
     public static String takenMail = "korac.veljan@gmail.com";
     public static By takenUsernameErrorMessageField = By.xpath("//div[@class='alert alert-danger']");
     public static String takenUsernameErrorMessage = "Sorry! The username you entered is already in use";
+    public static String randomEmail = "keljavorac@gmail.com";
+    public static String mailMissmatchMessage = "Email address does not match.";
     
     private static int getRandomInt(int length){
         Random ran = new Random();

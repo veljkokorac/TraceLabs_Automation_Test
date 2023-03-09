@@ -24,6 +24,7 @@ public class RegistrationPage extends BasePage {
     public void enterTakenMail(){
         inputText(TestValues.MailInputField, TestValues.takenMail);
     }
+
     public void enterTakenConfirmMail(){
         inputText(TestValues.confirmMailField, TestValues.takenMail);
     }
@@ -35,14 +36,16 @@ public class RegistrationPage extends BasePage {
     public void enterInvalidMailFormat(){
         inputText(TestValues.MailInputField,TestValues.invalidMailFormat);
         inputText(TestValues.confirmMailField,TestValues.invalidMailFormat);
-
     }
     
     public void enterConfirmMail(){
         inputText(TestValues.confirmMailField, TestValues.mailinatorInboxName);
     }
-    
 
+    public void enterDifferentMail(){
+        inputText(TestValues.confirmMailField, TestValues.randomEmail);
+    }
+    
     public void enterPassword(){
         inputText(TestValues.passwordField, TestValues.password);
     }
@@ -59,7 +62,7 @@ public class RegistrationPage extends BasePage {
     public void enterInvalidPassword(){
         inputText(TestValues.passwordConfirmField, TestValues.invalidPassword);
     }
-
+    
     public void clickCheckField(){
         click(TestValues.checkButton);
     }
@@ -92,7 +95,6 @@ public class RegistrationPage extends BasePage {
         String actualMissingPasswordText = readText(TestValues.passwordMissingTextField);
         assertTextEquals(TestValues.passwordMissText, actualMissingPasswordText);
         return this;
-
     }
 
     public RegistrationPage verifyPasswordConfirmMissing (String expectedMissingPasswordConfirmText){
@@ -112,6 +114,7 @@ public class RegistrationPage extends BasePage {
         assertTextEquals(TestValues.expectedMissingUsernameText, actualMissingUsernameText);
         return this;  
     }    
+
     public RegistrationPage verifyCheckBoxMissing (String expectedMissCheckBoxTextError){
         String actualMissingCheckBoxText = readText(TestValues.checkBoxMissingErrorField);
         assertTextEquals(TestValues.checkBoxMisingText, actualMissingCheckBoxText);
@@ -123,6 +126,7 @@ public class RegistrationPage extends BasePage {
         assertTextEquals(TestValues.invalidMailFormatTextError, actualMessageForInvalidMailFormat);
         return this; 
     }
+
     public RegistrationPage verifyBadPasswordForm (String expectedMessageBadPasswordForm){
         String actualMessageBadPasswordForm = readText(TestValues.passwordMissingTextField);
         assertTextEquals(TestValues.badPasswordErrorMessage, actualMessageBadPasswordForm);
@@ -139,6 +143,12 @@ public class RegistrationPage extends BasePage {
         String actualMessageForTakkenUsername = readText(TestValues.takenUsernameErrorMessageField);
         assertTextEquals(TestValues.takenUsernameErrorMessage, actualMessageForTakkenUsername);
         return this;
+    }
+
+    public RegistrationPage verifyMailMissmatch(String expectedMailMissmatchMessage){
+        String actualMailMissmatchMessage = readText(TestValues.missingConfirmMailTextField);
+        assertTextEquals(TestValues.mailMissmatchMessage, actualMailMissmatchMessage);
+        return this;       
     }
 }
     
