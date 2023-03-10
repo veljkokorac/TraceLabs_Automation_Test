@@ -22,7 +22,7 @@ public class BaseTest {
     @After
     public void teardown() {
         EdgeOptions options = new EdgeOptions();
-       // driver.quit();
+        driver.quit();
         System.out.println("Browser " + options.getBrowserName() + " has been closed!");
     }
 }
