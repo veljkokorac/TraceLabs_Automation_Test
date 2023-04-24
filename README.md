@@ -2,7 +2,7 @@ This is test automation framework that consists following libraries:
 -Selenium library for manipulating browser actions in combination with Java programming language
 -JUnit unit test library for verifying expected output in the tests.
 -Java programming language
--Instal:
+-Install:
  Download Selenium for Java: https://www.selenium.dev/downloads/ 
  Download Junit.jar and hamcrest-core.jar files :https://github.com/junit-team/junit4/wiki/Download-and-Install
  Import as referenced files.
