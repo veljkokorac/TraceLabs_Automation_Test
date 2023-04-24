@@ -4,8 +4,8 @@ import java.util.Random;
 
 import org.openqa.selenium.By;
 
-public class TestValues  {
-    
+public class TestValues {
+
     public static String RegistrationPageUrl = "https://etherscan.io/register";
     public static String mailinatorInboxName = "veljan.korac" + Math.random() + "@mailinator.com";
     public static int generatedNumber = getRandomInt(10000);
@@ -17,26 +17,24 @@ public class TestValues  {
     public static By MailInputField = By.id("ContentPlaceHolder1_txtEmail");
     public static By confirmMailField = By.id("ContentPlaceHolder1_txtConfirmEmail");
     public static By passwordField = By.id("ContentPlaceHolder1_txtPassword");
-    public static By passwordConfirmField = By.id("ContentPlaceHolder1_txtPassword2"); 
+    public static By passwordConfirmField = By.id("ContentPlaceHolder1_txtPassword2");
     public static By checkButton = By.id("ContentPlaceHolder1_MyCheckBox");
-    public static By captchaField = By.xpath("//span[@class='recaptcha-checkbox goog-inline-block recaptcha-checkbox-unchecked rc-anchor-checkbox']");
     public static String mailinatorUrl = "https://www.mailinator.com/v4/public/inboxes.jsp";
     public static By emailInputField = By.id("inbox_field");
     public static By goButton = By.xpath("//button[@class = 'primary-btn']");
-    public static By submitButton = By.xpath("//input[@type='submit']");
-    public static By passwordTextErrorField = By.id("ContentPlaceHolder1_txtPassword2-error");
+    public static By submitButton = By.xpath("//input[contains(@id, 'btnRegister')]");
     public static String expectedError = "Password does not match, please check again.";
-    public static By missingConfirmMailTextField = By.id("ContentPlaceHolder1_txtConfirmEmail-error");
+    public static By missingConfirmMailTextField = By.xpath("//div[contains(@id, 'txtConfirmEmail-error')]");
     public static String missingConfirmMailText = "Please re-enter your email address.";
-    public static By passwordMissingTextField = By.id("ContentPlaceHolder1_txtPassword-error");
+    public static By passwordMissingTextField = By.xpath("//div[contains(@id, 'txtPassword-error')]");
     public static String passwordMissText = "Please enter Password.";
-    public static By mailMissingTextField = By.id("ContentPlaceHolder1_txtEmail-error");
+    public static By mailMissingTextField = By.xpath("//div[contains(@id, 'txtEmail-error')]");
     public static String expectedMailMissingText = "Please enter a valid email address.";
-    public static By missingUsernameTextField = By.id("ContentPlaceHolder1_txtUserName-error");
+    public static By missingUsernameTextField = By.xpath("//div[contains(@id, 'txtUserName-error')]");
     public static String expectedMissingUsernameText = "Please enter Username.";
-    public static By passwordConfirmMissTextField = By.id("ContentPlaceHolder1_txtPassword2-error");
-    public static String passwordConfrimMissText = "Your password must be at least 8 characters long.";
-    public static By checkBoxMissingErrorField = By.id("ctl00$ContentPlaceHolder1$MyCheckBox-error");
+    public static By passwordConfirmMissTextField = By.xpath("//div[contains(@id, 'txtPassword2-error')]");
+    public static String passwordConfirmMissText = "Your password must be at least 8 characters long.";
+    public static By checkBoxMissingErrorField = By.xpath("//div[contains(@id, 'MyCheckBox-error')]");
     public static String checkBoxMisingText = "Please accept our Terms and Conditions.";
     public static String invalidMailFormat = "invalidemailformat111";
     public static String invalidMailFormatTextError = "Please enter a valid email address.";
@@ -48,8 +46,9 @@ public class TestValues  {
     public static String takenUsernameErrorMessage = "Sorry! The username you entered is already in use";
     public static String randomEmail = "keljavorac@gmail.com";
     public static String mailMissmatchMessage = "Email address does not match.";
-    
-    private static int getRandomInt(int length){
+    public static By cookieConsent = By.xpath("//button[@id='btnCookie']");
+
+    private static int getRandomInt(int length) {
         Random ran = new Random();
         int x = ran.nextInt(length) + 5;
         return x;
